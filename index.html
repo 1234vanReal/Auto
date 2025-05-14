@@ -27,5 +27,33 @@
             background-color: #0056b3;
         }
         .fact {
-            margin
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Willkommen zu Random Fakten!</h1>
+    <p>Klicke auf die Schaltfläche unten, um einen zufälligen Fakt zu erhalten:</p>
+    <button onclick="generateFact()">Neuen Fakt anzeigen</button>
+    <div class="fact" id="fact"></div>
+
+    <script>
+        const facts = [
+            "Honig verdirbt nie – er wurde in alten ägyptischen Gräbern essbar gefunden.",
+            "Ein Strauß kann schneller laufen als ein Pferd.",
+            "Die meisten Lippenstifte enthalten Fischschuppen.",
+            "Die Erde ist das einzige bekannte Objekt im Universum, das Leben unterstützt.",
+            "Menschen teilen 60% ihrer DNA mit Bananen."
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factElement = document.getElementById("fact");
+            factElement.textContent = facts[randomIndex];
+        }
+    </script>
+</body>
+</html>
 
